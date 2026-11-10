@@ -10,7 +10,7 @@ export function useOrbis(username?: string) {
     const [user, setUser] = useState();
     const [profileData, setProfileData] = useState<any>();
     const [fetchedProfileData, setFetchedProfileData] = useState<any>();
-    const data = profileData?.details?.profile?.data?.trainingData.data;
+    const data = profileData?.details?.profile?.data?.trainingData?.data;
     const voiceId = profileData?.details?.profile?.data?.trainingData?.voiceId;
 
     useEffect(() => {

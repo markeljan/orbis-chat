@@ -1,7 +1,8 @@
 import { Chat } from '@/components/chat'
 
-export default function Home({ params }: { params: { username: string } }) {
+export default async function Home({ params }: { params: Promise<{ username: string }> }) {
+  const { username } = await params
   return <div className="max-w">
-    <Chat username={params.username} />
+    <Chat username={username} />
   </div>
 }
