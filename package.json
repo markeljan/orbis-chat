@@ -2,11 +2,17 @@
   "name": "orbis-chat",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/*.test.cjs"
   },
   "dependencies": {
     "@orbisclub/components": "^0.2.11",
@@ -19,7 +25,7 @@
     "clsx": "^2.0.0",
     "ethers": "^5.7.2",
     "lucide-react": "^0.279.0",
-    "next": "^15.5.10",
+    "next": "15.5.29",
     "next-themes": "^0.2.1",
     "openai-edge": "^1.2.2",
     "react": "^18.2.0",
@@ -40,12 +46,20 @@
     "@types/react-dom": "^18.2.8",
     "@types/react-syntax-highlighter": "^15.5.7",
     "autoprefixer": "^10.4.16",
-    "eslint": "^8.50.0",
-    "eslint-config-next": "^13.5.3",
+    "eslint": "8.57.1",
+    "eslint-config-next": "15.5.29",
     "postcss": "^8.4.31",
     "tailwind-merge": "^1.14.0",
     "tailwindcss": "^3.3.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.2.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "@orbisclub/components>react-time-ago": "7.4.4",
+      "eslint-config-next>@typescript-eslint/parser": "8.72.2",
+      "eslint-config-next>@typescript-eslint/eslint-plugin": "8.72.2"
+    },
+    "onlyBuiltDependencies": ["bufferutil", "keccak", "secp256k1", "utf-8-validate"]
   }
 }
